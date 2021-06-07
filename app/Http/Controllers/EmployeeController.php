@@ -21,7 +21,8 @@ class EmployeeController extends Controller
     {
         $employees = DB::table('employees')->get();
         $numRows = count($employees);
-        return view('employee.index', compact('employees', 'numRows'));
+        $jobs = DB::table('jobs')->pluck('title');
+        return view('employee.index', compact('employees', 'numRows', 'jobs'));
     }
 
     public function addEmployee()

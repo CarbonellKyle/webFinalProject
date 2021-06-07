@@ -34,10 +34,11 @@
                 </tr>
             </thead>
             <tbody>
+            <?php $i = 0 ?>
             @foreach ($employees as $employee)
                 <tr>
                     <td>{{$employee->first_name . ' ' . $employee->last_name}}</td>
-                    <td>{{$employee->job_id}}</td>
+                    <td>{{$jobs[$i]}}</td>
                     <td>{{$employee->hired_date}}</td>
                     <td>
                         <a class="btn btn-info" href="/employee/view/{{$employee->employee_id}}">See More</a>
@@ -45,6 +46,7 @@
                         <a class="btn btn-danger" href="/employee/delete/{{$employee->employee_id}}">Fire</a>
                     </td>
                 </tr>
+                <?php $i++ ?>
             @endforeach
             </tbody>
         </table>

@@ -61,14 +61,11 @@
         <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Laravel 8 </div>
+        <div class="sidebar-heading">User Panel</div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Activity 1</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Activity 2</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Activity 3</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Activity 4</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Activity 5</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Activity 6</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Take Orders</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">This Day</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">This Week</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->

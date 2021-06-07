@@ -83,6 +83,7 @@ class CreateProjectTablesTable extends Migration
             $table->foreign('trans_id')->references('trans_id')->on('transaction_details')->onUpdate('cascade')->onDelete('set null');
             $table->unsignedBigInteger('product_id')->nullable();
             $table->foreign('product_id')->references('product_id')->on('products')->onUpdate('cascade')->onDelete('set null');
+            $table->string('product_name')->nullable();
             $table->integer('order_qty');
             $table->float('price');
             $table->float('amount');

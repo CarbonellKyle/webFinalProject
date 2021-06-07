@@ -67,6 +67,7 @@
             <a href="{{route('product.index')}}" class="list-group-item list-group-item-action bg-light">Inventory</a>
             <a href="{{route('employee.index')}}" class="list-group-item list-group-item-action bg-light">Employee</a>
             <a href="{{route('order.index')}}" class="list-group-item list-group-item-action bg-light">Point of Sale</a>
+            <a href="{{route('sale.daily')}}" class="list-group-item list-group-item-action bg-light">View Sales</a>
             <a href="/laratrust" class="list-group-item list-group-item-action bg-light">Manage Users</a>
         </div>
         </div>

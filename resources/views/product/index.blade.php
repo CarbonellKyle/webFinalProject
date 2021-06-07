@@ -37,7 +37,7 @@
             @foreach ($products as $product)
                 <tr>
                     <td>{{$product->name}}</td>
-                    <td>{{$product->stock_qty}}</td>
+                    <td @if ($product->stock_qty <= $product->critical_qty) class="bg-warning" @endif>{{$product->stock_qty}}</td>
                     <td>{{$product->price}}</td>
                     <td>
                         <a class="btn btn-info" href="/product/view/{{$product->product_id}}">See More</a>

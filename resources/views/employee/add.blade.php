@@ -55,6 +55,7 @@
                 <option value="{{$job->job_id}}">{{ $job->title }}</option>
                 @endforeach
             </select>
+            <a class="btn btn-primary" href="{{route('job.add')}}">Add Jobs</a>
         </div>
         <div class="fv-row mb-7">
             <label for="hired_date" class="form-label fw-bolder text-dark fs-6">{{ __('Date Hired') }}</label>

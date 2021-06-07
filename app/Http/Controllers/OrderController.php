@@ -29,32 +29,54 @@ class OrderController extends Controller
         $nextTransId = $statement[0]->Auto_increment;
 
         $orders = DB::table('order_details')->where('advanceTransId', $nextTransId)->get();
-        //$purchased = $orders->select
+        $numRows = count($orders);
 
         $products = DB::table('products')->get();
-        return view('order.add', compact('products', 'nextTransId', 'orders'));
+
+        $payment = $orders->sum('amount');
+
+        return view('order.add', compact('products', 'nextTransId', 'numRows', 'orders', 'payment'));
     }
 
     public function addOrderSubmit(Request $request)
     {
-        $product_name = DB::table('products')->select('name')->where('product_id', $request->product_id)->first();
 
         $validatedData = $request->validate([
             'advanceTransId' => 'required',
             'product_id' => 'required',
             'order_qty' => 'required',
             'price' => 'required',
-            'amount' => 'required'
         ]);
+
+        $product_name = DB::table('products')->select('name')->where('product_id', $request->product_id)->first();
 
         DB::table('order_details')->insert([
             'advanceTransId' => $request->advanceTransId,
             'product_id' => $request->product_id,
+            'product_name' => $product_name->name,
             'order_qty' => $request->order_qty,
             'price' => $request->price,
-            'amount' => $request->amount,
+            'amount' => $request->price * $request->order_qty,
             'order_date' => $request->created_at
         ]);
-        return back()->with('order_added', $product_name->name );
+
+        $purchased = DB::table('products')->where('product_id', $request->product_id)->first();
+        $qty = $purchased->stock_qty;
+        $current_qty = $qty - $request->order_qty;
+
+        DB::table('products')->where('product_id', $request->product_id)->update([
+            'stock_qty' => $current_qty
+        ]);
+
+        $statement = DB::select("SHOW TABLE STATUS LIKE 'transaction_details' ");
+        $nextTransId = $statement[0]->Auto_increment;
+
+        $orders = DB::table('order_details')->where('advanceTransId', $nextTransId)->get();
+        $numRows = count($orders);
+
+        $products = DB::table('products')->get();
+        $payment = $orders->sum('amount');
+
+        return view('order.add', compact('products', 'nextTransId', 'numRows', 'orders', 'payment'));
     }
 }

@@ -63,6 +63,7 @@
                 <option value="{{$category->category_id}}">{{ $category->name }}</option>
                 @endforeach
             </select>
+            <a class="btn btn-primary" href="{{route('category.add')}}">Add Category</a>
         </div>
         <div class="fv-row mb-7">
             <label for="supplier_id" class="form-label fw-bolder text-dark fs-6">{{ __('Supplier') }}</label>
@@ -71,6 +72,7 @@
                 <option value="{{$supplier->supplier_id}}">{{ $supplier->company_name }}</option>
                 @endforeach
             </select>
+            <a class="btn btn-primary" href="{{route('supplier.add')}}">Add Supplier</a>
         </div>
         
         <div class="text-center">

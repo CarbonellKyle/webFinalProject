@@ -8,6 +8,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,8 +75,14 @@ Route::post('/employee/update', [EmployeeController::class, 'updateEmployee'])->
 
 //Transaction Routes
 Route::post('/transaction/add', [TransactionController::class, 'addTransactionSubmit'])->name('transaction.addSubmit');
+Route::get('/view/daily', [TransactionController::class, 'viewDaily'])->name('transaction.daily');
+Route::get('/view/weekly', [TransactionController::class, 'viewWeekly'])->name('transaction.weekly');
 
 //Order Routes
 Route::get('/pos', [OrderController::class, 'index'])->name('order.index');
 Route::get('/order/add', [OrderController::class, 'addOrder'])->name('order.add');
 Route::post('/order/add', [OrderController::class, 'addOrderSubmit'])->name('order.addSubmit');
+
+//SaleRoutes
+Route::get('/sale/daily', [SaleController::class, 'saleDaily'])->name('sale.daily');
+Route::get('/sale/monthly', [SaleController::class, 'saleMonthly'])->name('sale.monthly');

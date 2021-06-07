@@ -8,11 +8,11 @@
             <a class="btn btn-primary mx-1" href="{{route('order.add')}}">Take Orders</a>
         </li>
         <li class="nav-item">
-            <a class="btn btn-primary mx-1" href="#">Daily Transactions</a>
+            <a class="btn btn-primary mx-1" href="{{route('transaction.daily')}}">Daily Transactions</a>
         </li>
         <li class="nav-item">
-            <a class="btn btn-primary mx-1" href="#">Weekly Transactions</a>
-        </li>  
+            <a class="btn btn-primary mx-1" href="{{route('transaction.weekly')}}">Weekly Transactions</a>
+        </li>
 </nav>
     
 <div class="container">
