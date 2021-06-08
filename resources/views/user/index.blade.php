@@ -1,32 +1,22 @@
 @extends('layouts.template')
 
 @section('content')
-<br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in as User!') }}
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container">
+        <!--begin::Row-->
+        <div class="row gy-5 g-xl-8">
+            <!--begin::Col-->
+            <div class="col-xxl-4">
+                <!--begin::List Widget 5-->
+                <div class="card card-xxl-stretch">
+                    <h1>Hello</h1>
                 </div>
-
-                <div class="container">
-                    <p><strong>Temporary</strong> pa ni guys kay magbuhat pa kog seeder para ma built-in ang Admin</p>
-                    <p>I edit imong account, I check ang <strong>Administrator</strong> then i uncheck ang <strong>User</strong></p>
-                    <p>Balik dayun <strong>Login</strong> para ma redirect ka sa <strong>Admin Panel</strong>. Thank You!</p>
-                </div>
-                <a href="/laratrust" class="btn btn-danger">Click Here to Change Your Account Type</a>
-
-            </div>
-        </div>
+            </div><!--end::col-->
+        </div><!--end::row-->
     </div>
+    <!--end::container-->
 </div>
+<!--end::post-->
 @endsection

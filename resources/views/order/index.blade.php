@@ -1,24 +1,22 @@
-@extends('layouts.pos')
+@extends('layouts.template')
 
-@section('sub_content')
-<br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Point of Sale') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    Welcome, {{ Auth::user()->name }}
+@section('content') 
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container">
+        <!--begin::Row-->
+        <div class="row gy-5 g-xl-8">
+            <!--begin::Col-->
+            <div class="col-xxl-4">
+                <!--begin::List Widget 5-->
+                <div class="card card-xxl-stretch">
+                    <h1>{{ __('Point of Sale') }}</h1>
                 </div>
-            </div>
-        </div>
+            </div><!--end::col-->
+        </div><!--end::row-->
     </div>
+    <!--end::container-->
 </div>
+<!--end::post-->
 @endsection

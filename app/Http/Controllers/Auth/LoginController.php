@@ -37,7 +37,7 @@ class LoginController extends Controller
         }
 
         if($user->hasRole('user')){
-            return redirect('/dashboard');
+            return redirect()->route('order.add');
         }
     }
 
