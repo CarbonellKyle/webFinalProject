@@ -38,7 +38,7 @@ class CreateProjectTablesTable extends Migration
             $table->string('phone_number')->nullable();
             $table->unsignedBigInteger('job_id')->nullable();
             $table->foreign('job_id')->references('job_id')->on('jobs')->onUpdate('cascade')->onDelete('set null');
-            $table->date('hired_date')->default(DB::raw('CURRENT_DATE'));
+            $table->timestamp('hired_date')->useCurrent();
         });
 
         //Create tables for Suppliers
